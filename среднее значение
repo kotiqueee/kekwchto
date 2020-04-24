@@ -1,0 +1,50 @@
+function average() 
+
+{
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheets()[0];
+  var pos = sheet.getDataRange().getLastRow();
+ 
+  
+  sheet.getRange(6,14).setValue("Среднее арифметическое");
+  sheet.getRange(1,15).setValue("y");
+  sheet.getRange(1,16).setValue("g");
+  sheet.getRange(1,17).setValue("z");
+  
+  var sum_y = 0;
+  var sum_g = 0;
+  var sum_z = 0;
+  var amount_y = 0;
+  var amount_g = 0;
+  var amount_z = 0;
+  
+ 
+ for(i = 2; i <= pos; i++ ) 
+ {
+    var znach_y = sheet.getRange(i, 2).getValue();
+     sum_y = znach_y + sum_y;
+     amount_y = amount_y + 1; 
+     
+ }
+  
+  sheet.getRange(6,15).setValue(sum_y/amount_y);
+  
+for(i = 10; i <= pos; i++ ) 
+ {
+    var znach_g = sheet.getRange(i, 3).getValue();
+     sum_g = znach_g + sum_g;
+     amount_g = amount_g + 1; 
+ }
+  
+  sheet.getRange(6,16).setValue(sum_g/amount_g);  
+  
+for(i = 2; i <= pos; i++ ) 
+ {
+    var znach_z = sheet.getRange(i, 4).getValue();
+     sum_z = znach_z + sum_z;
+     amount_z = amount_z + 1; 
+ }
+  
+  sheet.getRange(6,17).setValue(sum_z/amount_g); 
+  
+}
