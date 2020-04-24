@@ -1,0 +1,7 @@
+function menu()
+{
+  var sheet = SpreadsheetApp.getActiveSpreadsheet();
+  var entries = [{name:"Мои функции", functionName:"my_Func"}, {name:"Сумма", functionName:"sum"}, {name:"Произведение", functionName:"product"}, {name:"Минимум", functionName:"mini"}, {name:"Максимум", functionName:"maxi"}, {name:"Среднее арифметическое", functionName:"average"}];
+  
+  sheet.addMenu("Автозаполнение", entries);
+}  
